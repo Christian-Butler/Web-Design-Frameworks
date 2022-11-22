@@ -1,2 +1,42 @@
-$danger: rgb(44, 237, 5);
+@import "../node_modules/bootstrap/scss/functions";
+
+@each $key, $val in $colors {
+    .bg-#{color}{
+      background-color: $val;
+    }
+  }
+  
+  @each $color, $val in $colors {
+    .bg-#{color}{
+      background-color: val;
+    }
+  
+    .bg-#{color}-light {
+      background-color: tint-color($val, 60%);
+    }
+  }
+
+$danger: rgb(5, 121, 237);
+$enable-rounded:              true !default;
+$enable-shadows:              true !default;
+$enable-gradients:            true !default;  
+
+//theme colors
+$primary : rgb(63, 92, 239);
+$secondary: rgb(32, 223, 237);
+$dark: rgb(100, 100, 100);
+$light: rgb(254, 240, 253);
+
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+//custom colors
+$custom-colors:(
+    "primary-light": rgb(231, 222, 249),
+    "secondary-light": rgb(246, 246, 246),
+);
+
+//merge our colours with the theme
+$theme-colors:map-merge($theme-colors, $custom-colors);
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
